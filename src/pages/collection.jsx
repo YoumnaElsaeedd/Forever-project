@@ -47,50 +47,55 @@ function Collection() {
    
   return (
     <>
-    <div className='sm:flex  mt-9 '>
-      <div className='sm:flex flex-col gap-5'>
-        <div className='flex  items-center gap-2 '>
-        <h1  className='text-4xl text-black mb-4  mr-76font-semibold'>FILTERS</h1>
-        <img src={assets.dropdown_icon} className={`sm:hidden ${show? 'rotate-90' : ''} h-8 w-5 align-top `} onClick={()=>{setshow(!show)}}/>
-        </div>
-      <div className={`sm:flex flex-col border p-5 ${show?'w-full':'hidden'} sm:block`} >
+    <div className='sm:flex mt-9'>
+  <div className='sm:flex flex-col gap-5'>
+    <div className='flex items-center gap-2'>
+      <h1 className='text-4xl text-black mb-4 font-semibold'>FILTERS</h1>
+      <img
+        src={assets.dropdown_icon}
+        className={`sm:hidden ${show ? 'rotate-90' : ''} h-8 w-5`}
+        onClick={() => { setshow(!show); }}
+        alt="Toggle Filters"
+      />
+    </div>
+    
+    <div className={`sm:flex flex-col border p-5 ${show ? 'w-full' : 'hidden'} sm:block`}>
       <h1 className='text-2xl font-semibold text-black'>CATEGORIES</h1>
-         <p className=''><input type='checkbox'value={'Men'} onChange={handleChange}/>MEN</p> 
-         <p className=''><input type='checkbox' value={'Women'}onChange={handleChange}/>WOMEN</p> 
-         <p className=''><input type='checkbox'value={'Kids'}onChange={handleChange}/>KIDS</p> 
-      </div>
+      <p><input type='checkbox' value={'Men'} onChange={handleChange} /> MEN</p>
+      <p><input type='checkbox' value={'Women'} onChange={handleChange} /> WOMEN</p>
+      <p><input type='checkbox' value={'Kids'} onChange={handleChange} /> KIDS</p>
+    </div>
 
-      <div className={`sm:flex flex-col border p-5 ${show?'w-full':'hidden'}`}>
+    <div className={`sm:flex flex-col border p-5 ${show ? 'w-full' : 'hidden'}`}>
       <h1 className='text-2xl font-semibold text-black'>TYPE</h1>
-         <p className=''><input type='checkbox' value={'Topwear'} onChange={handleChange2}/>TOPWEAR</p> 
-         <p className=''><input type='checkbox' value={'Bottomwear'}  onChange={handleChange2}/>BOTTOMWEAR</p> 
-         <p className=''><input type='checkbox' value={'Winterwear'}  onChange={handleChange2} />WINTERWEAR</p> 
+      <p><input type='checkbox' value={'Topwear'} onChange={handleChange2} /> TOPWEAR</p>
+      <p><input type='checkbox' value={'Bottomwear'} onChange={handleChange2} /> BOTTOMWEAR</p>
+      <p><input type='checkbox' value={'Winterwear'} onChange={handleChange2} /> WINTERWEAR</p>
+    </div>
+  </div>
+
+  <div className='block sm:flex-1'>
+    <div className='flex justify-between items-center'>
+      <div className='flex justify-center items-center ml-12'>
+        <Title text1="All" text2="Collections" />
+        <p className='h-0.5 w-12 bg-slate-900'></p>
       </div>
+
+      <select className='border-2 sm:border-gray-500 text-xl h-10 rounded-md'>
+        <option value="relevant">sort by: relevant</option>
+        <option value="Low-High">sort by: Low to High</option>
+        <option value="High-Low">sort by: High to Low</option>
+      </select>
     </div>
 
-    <div className='block sm:flex-1 '>
-      <div className='flex justify-between items-center'> 
-       <div className='flex justify-center items-center ml-12'>
-       <Title text1="All" text2="Collections"/>
-       <p className='h-0.5 w-12 bg-slate-900 items-center'></p>
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-9'>
+      {Data.map((el) => {
+        return <Card key={el._id} obj={el} />;
+      })}
     </div>
-   
-      <select className='border-2 sm:border-gray-500 text-xl h-10 rounded-md '>
-        <option value="relavent">sort by:relavent</option>
-        <option value="Low-High">sort by : Low to High</option>
-        <option value="High-Low"> sort by : High To Low</option>
-      </select>
-   </div>
-     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-9'>
-       {
-        Data.map((el)=>{
-          return  <Card key={el._id} obj ={el}/>
-        })
-       }
-      </div>
-      
-    </div>
-    </div>
+  </div>
+</div>
+
 </>
   )
 }
