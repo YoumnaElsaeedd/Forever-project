@@ -81,7 +81,7 @@ function Collection() {
         <option value="High-Low"> sort by : High To Low</option>
       </select>
    </div>
-     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-9'>
+     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 m-9'>
        {
         Data.map((el)=>{
           return  <Card key={el._id} obj ={el}/>

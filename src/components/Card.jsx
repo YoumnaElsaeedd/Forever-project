@@ -11,7 +11,7 @@ const Card = ({obj} ) => {
       <Link to={`/product/${obj._id}`}>
         <img src={obj.image[0]}className='hover:scale-105 my-4' alt={obj.name} />
       </Link>
-      <h1>{obj.name}</h1>
+      <h1 className="w-full">{obj.name}</h1>
       <p>{obj.price}$</p>
     </div>
   );
