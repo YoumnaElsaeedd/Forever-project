@@ -8,12 +8,15 @@ import Navbar from './includes/navbar';
 import Details from './components/Details';
 import Footer from './includes/Footer';
 import Login2 from './pages/LoginForm';
+import SearchBar from './components/SearchBar';
+import ShopContextProvider from './context/shoppContext'; 
 
 function App() {
   return (
-    <BrowserRouter>
-      
+    <ShopContextProvider> 
+      <BrowserRouter>
         <Navbar />
+        <SearchBar />
         <div className='px-20'>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -25,12 +28,12 @@ function App() {
           </Routes>
         </div>
         <Footer />
-        
-     
-    </BrowserRouter>
+      </BrowserRouter>
+    </ShopContextProvider>
   );
 }
 
 export default App;
+
 
 
