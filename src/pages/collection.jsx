@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Title from '../components/Title';
 import { assets, products } from '../assets/frontend_assets/assets';
 import Card from '../components/Card';
+import { ShopContext } from '../context/shoppContext';
 
 function Collection() {
+  const {search, showSearch} = useContext(ShopContext)
   const [show, setShow] = useState(false);
   const [data, setData] = useState([]);
   const [category, setCategory] = useState([]);
@@ -26,6 +28,9 @@ function Collection() {
 
   const filterProducts = () => {
     let filteredProducts = products.slice();
+    if(search && showSearch){
+      filteredProducts = filteredProducts.filter((el)=>el.name.toLowerCase().includes(search.toLowerCase()))
+    }
     if (category.length > 0) {
       filteredProducts = filteredProducts.filter((el) => category.includes(el.category));
     }
@@ -49,7 +54,7 @@ function Collection() {
   useEffect(() => {
     let updatedProducts = filterProducts();
     setData(sortProducts(updatedProducts));
-  }, [category, subCategory, sortType]);
+  }, [category, subCategory, sortType, search, showSearch]);
 
   return (
     <>
