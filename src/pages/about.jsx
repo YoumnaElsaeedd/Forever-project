@@ -29,7 +29,6 @@ function About() {
 
 <div className='flex flex-col items-center my-10'>
   <Title text1='Why' text2='Choose Us' />
-  <p className='h-0.5 w-8 bg-slate-900'></p>
 </div>
 
 <div className='flex flex-col md:flex-row text-sm mb-20 gap-5'>

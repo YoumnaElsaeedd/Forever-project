@@ -10,15 +10,16 @@ import Footer from './includes/Footer';
 import Login2 from './pages/LoginForm';
 import SearchBar from './components/SearchBar';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 import ShopContextProvider from './context/shoppContext';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <ShopContextProvider> 
+    <ShopContextProvider>
       <BrowserRouter>
-      <ToastContainer/>
+        <ToastContainer />
         <Navbar />
         <SearchBar />
         <div className='px-20'>
@@ -27,9 +28,10 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/collection' element={<Collection />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path="/product/:productId" element={<Details />} />
-            <Route path='/cart' element={<Cart/>}/>
-            <Route path="/login" element={<Login2 />} />
+            <Route path='/product/:productId' element={<Details />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/login' element={<Login2 />} />
+            <Route path='/checkout' element={<Checkout />} />
           </Routes>
         </div>
         <Footer />
@@ -39,6 +41,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

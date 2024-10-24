@@ -101,7 +101,6 @@ function Collection() {
           <div className="flex justify-between items-center">
             <div className="flex justify-center items-center ml-12">
               <Title text1="All" text2="Collections" />
-              <p className="h-0.5 w-12 bg-slate-900"></p>
             </div>
 
             <select

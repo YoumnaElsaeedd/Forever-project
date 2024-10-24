@@ -8,7 +8,6 @@ const CartTotal= ()=> {
     <div className='w-full'>
        <div className='text-2xl flex items-center'>
   <Title text1={'CART'} text2={'TOTALS'} />
-  <p className='h-0.5 w-8 bg-slate-900 ml-4'></p>
 </div>
 
         <div className='flex flex-col gap-2 mt-2 text-sm'>

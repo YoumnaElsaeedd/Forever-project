@@ -9,7 +9,7 @@ function Contact() {
     <>
     <div className='flex flex-col items-center my-10'>
   <Title text1="CONTACT" text2="US" />
-  <p className='h-0.5 w-8 bg-slate-900'></p>
+  
 </div>
 
 <div className='flex flex-col sm:flex-row gap-9 items-center'>

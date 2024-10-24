@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import { products } from "../assets/frontend_assets/assets";
 import { ToastContainer, toast } from 'react-toastify';
 
+
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
@@ -10,6 +11,7 @@ const ShopContextProvider = (props) => {
   const [search, setSearch] = useState('');
   const [showSearch, setShowSearch] = useState(false);
   const [cartItem, setCartItem] = useState({});
+  
 
 
   
@@ -92,6 +94,8 @@ const AmountCart= ()=>{
     getCartCount,
     updatedQuantity,
     AmountCart
+    
+    
   };
 
   return (
