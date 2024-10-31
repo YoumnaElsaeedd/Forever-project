@@ -8,7 +8,6 @@ function About() {
     <>
     <div className='flex flex-col items-center my-10'>
   <Title text1="About" text2="Us" />
-  <p className='h-0.5 w-8 bg-slate-900'></p>
 </div>
 
 <div className='flex flex-col sm:flex-row gap-9 items-center'>

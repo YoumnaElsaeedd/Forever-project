@@ -1,8 +1,12 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
+import AdminPanel from "./AdminPanel";
 
 const Login2 = () => {
+  const navigate = useNavigate();
+
   const schema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string()
@@ -19,29 +23,16 @@ const Login2 = () => {
     validationSchema: schema,
     onSubmit: async (values) => {
       try {
-        const response = await fetch('https://cyparta-backend-gf7qm.ondigitalocean.app/api/login/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-            
-          },
-          body: JSON.stringify({
-            email: values.email,
-            password: values.password
-          })
-        });
-
-
        
-        const data = await response.json();
-        const token = data.token;
+        if (values.email === "admin@example.com" && values.password === "passWo123") {
+           
+          const fakeToken = "fake-token-123456";
+          localStorage.setItem('token', fakeToken);
 
-       
-        localStorage.setItem('token', token);
-        
-
-        
-        alert('Login successful!');
+          navigate('/AdminPanel');
+        } else {
+          alert('Login failed');
+        }
 
       } catch (error) {
         console.error('Error logging in:', error);
@@ -92,6 +83,9 @@ const Login2 = () => {
 };
 
 export default Login2;
+
+
+
 
 
 
