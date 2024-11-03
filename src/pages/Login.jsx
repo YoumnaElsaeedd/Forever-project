@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
 
 const Login = () => {
   const [currentState, setCurrentState] = useState("Sign Up");
@@ -20,16 +19,8 @@ const Login = () => {
       password: "",
     },
     validationSchema: schema,
-    onSubmit: async (values) => {
-      try {
-        const response = await axios.post("https://pm.alexondev.net/api/login", {
-          email: values.email,
-          password: values.password,
-        });
-        console.log("Login successful:", response.data);
-      } catch (error) {
-        console.error("Login failed:", error);
-      }
+    onSubmit: (values) => {
+      console.log("Form submitted:", values);
     },
   });
 
@@ -57,7 +48,7 @@ const Login = () => {
         onBlur={formik.handleBlur}
         value={formik.values.email}
       />
-      <span className="text-red-600">{formik.errors.email}</span>
+      <span className="text-red-600">{formik.errors.email && formik.touched.email && formik.errors.email}</span>
       <input
         type="password"
         name="password"
@@ -67,7 +58,7 @@ const Login = () => {
         onBlur={formik.handleBlur}
         value={formik.values.password}
       />
-      <span className="text-red-600">{formik.errors.password}</span>
+      <span className="text-red-600">{formik.errors.password && formik.touched.password && formik.errors.password}</span>
 
       <div className="w-full flex justify-between text-sm mt-[-8px]">
         <p>Forget Your Password?</p>
