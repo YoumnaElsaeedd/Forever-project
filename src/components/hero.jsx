@@ -3,17 +3,17 @@ import { assets } from '../assets/frontend_assets/assets'
 
 function Hero() {
   return (
-    <div className='sm:flex border w-full items-center '>
-        <div className='sm:w-1/2 justify-center items-center flex flex-col'>
-        <div className='flex flex-col gap-7'>
-            <div className='flex items-center gap-2'>
-                <p className='bg-slate-900 w-5 h-0.5'></p>
-                <h1 className='text-3xl text-gray-800'> Best Sellers</h1>
+    <div className='flex flex-col sm:flex-row border-gray-400 '>
+        <div className='w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0'>
+        <div className='text-[#414141]'>
+            <div className='flex items-center gap-2 '>
+                <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
+                <p className='font medium text-sm md:text-base'> Best Sellers</p>
             </div>
             <div className='text-7xl flex items-center'> Latest Arrivals </div>
             <div className='flex items-center gap-2 '>
-            <h1 className='text-3xl text-gray-800'> Shop Now</h1>
-                <p className='bg-slate-900 w-6 h-0.5'></p>
+            <h1  className='font medium text-sm md:text-base'> Shop Now</h1>
+            <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
             </div>
             </div>
             

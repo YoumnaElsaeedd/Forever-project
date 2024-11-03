@@ -80,7 +80,7 @@ const Cart = () => {
       </div>
 
       <div className='w-full text-end'>
-        <button onClick={() => navigate('/checkout')} className='bg-black text-white text-sm my-8 px-8 py-3'>
+        <button onClick={() => navigate('/Checkout')} className='bg-black text-white text-sm my-8 px-8 py-3'>
           PROCEED TO CHECKOUT
         </button>
       </div>
