@@ -16,7 +16,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AdminPanel from './pages/AdminPanel';
 import Login from './pages/Login';
-import Checkout from './pages/checkout';
+import Checkout from './pages/Check'
 
 
 function AppContent() {
