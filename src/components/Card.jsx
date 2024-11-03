@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Card = ({obj} ) => {
   if (!obj) {
-    return <div>Loading...</div>;
+    return <div>Loading....</div>;
   }
 
   return (
