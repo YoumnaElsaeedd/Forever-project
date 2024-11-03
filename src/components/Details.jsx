@@ -25,7 +25,7 @@ function Details() {
           <img 
             src={product.image[0]} 
             alt={product.name} 
-            className='w-full sm:w-3/4 object-cover' 
+            className='w-full sm:w-2/4 object-cover' 
           />
         </div>
 
