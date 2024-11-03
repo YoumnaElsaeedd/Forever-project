@@ -15,7 +15,7 @@ import ShopContextProvider from './context/shoppContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AdminPanel from './pages/AdminPanel';
-import Checkout from './pages/checkout';
+import Checkout from './pages/checkout'
 import Login from './pages/Login';
 
 
