@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { assets, products } from '../assets/frontend_assets/assets';
 import { ShopContext } from '../context/shoppContext';
@@ -8,6 +8,11 @@ function Details() {
   const product = products.find((p) => p._id === productId);
   const [size, setSize] = useState("");
   const { currency, addToCart } = useContext(ShopContext);
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, [productId]);
 
   if (!product) {
     return <h2>Product not found</h2>;

@@ -61,7 +61,7 @@ function Collection() {
       <div className="sm:flex mt-9">
         <div className="sm:flex flex-col gap-5">
           <div className="flex items-center gap-2">
-            <h1 className="text-4xl text-black mb-4 font-semibold">FILTERS</h1>
+            <h1 className="text-4xl text-gray-700 mb-4 ">FILTERS</h1>
             <img
               src={assets.dropdown_icon}
               className={`sm:hidden ${show ? 'rotate-90' : ''} h-8 w-5`}
@@ -71,7 +71,7 @@ function Collection() {
           </div>
 
           <div className={`sm:flex flex-col border p-5 ${show ? 'w-full' : 'hidden'} sm:block`}>
-            <h1 className="text-2xl font-semibold text-black">CATEGORIES</h1>
+            <h3 className="text-2xl  text-gray-500">CATEGORIES</h3>
             <p>
               <input type="checkbox" value="Men" onChange={handleCategoryChange} /> MEN
             </p>
@@ -84,7 +84,7 @@ function Collection() {
           </div>
 
           <div className={`sm:flex flex-col border p-5 ${show ? 'w-full' : 'hidden'}`}>
-            <h1 className="text-2xl font-semibold text-black">TYPE</h1>
+            <h3 className="text-2xl   text-gray-500">TYPE</h3>
             <p>
               <input type="checkbox" value="Topwear" onChange={handleSubCategoryChange} /> TOPWEAR
             </p>
@@ -104,13 +104,14 @@ function Collection() {
             </div>
 
             <select
-              onChange={(e) => setSortType(e.target.value)}
-              className="border-2 sm:border-gray-500 text-xl h-10 rounded-md"
-            >
-              <option value="relevant">sort by: relevant</option>
-              <option value="Low-High">sort by: Low to High</option>
-              <option value="High-Low">sort by: High to Low</option>
-            </select>
+  onChange={(e) => setSortType(e.target.value)}
+  className="border-2 border-gray-500 h-9 rounded-md bg-white focus:outline-none  transition duration-200 ease-in-out"
+>
+  <option value="relevant">Sort by: Relevant</option>
+  <option value="Low-High">Sort by: Low to High</option>
+  <option value="High-Low">Sort by: High to Low</option>
+</select>
+
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-9">
